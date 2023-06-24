@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.asserts.SoftAssert;
 
+import com.page.object.model.LoginPage;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -25,40 +27,40 @@ public class StepDef {
 
 	@When("Enter valid user")
 	public void enter_valid_user() {
-		driver.findElement(By.xpath("//*[@id='username']")).sendKeys("Batch34");
+		driver.findElement(LoginPage.userName).sendKeys("Batch34");
 	}
 
 	@When("Enter valid password")
 	public void enter_valid_password() {
-		driver.findElement(By.xpath("//*[@id='password']")).sendKeys("student123@");
+		driver.findElement(LoginPage.passWord).sendKeys("student123@");
 	}
 
 	@When("Click login")
 	public void click_login() {
-		driver.findElement(By.xpath("//*[@type='submit']")).click();
+		driver.findElement(LoginPage.logIn).click();
 	}
 
 	@Then("logout Button should be visible")
 	public void logout_button_should_be_visible() {
 		SoftAssert sf = new SoftAssert();
-		sf.assertTrue(driver.findElement(By.xpath("//*[text()='Logout']")).isDisplayed());
+		sf.assertTrue(driver.findElement(LoginPage.logOut).isDisplayed());
 		sf.assertAll();
 
 	}
 
 	@When("Enter invalid user")
 	public void enter_invalid_user() {
-		driver.findElement(By.xpath("//*[@id='username']")).sendKeys("mhbjnhg");
+		driver.findElement(LoginPage.userName).sendKeys("mhbjnhg");
 	}
 
 	@When("Enter invalid password")
 	public void enter_invalid_password() {
-		driver.findElement(By.xpath("//*[@id='password']")).sendKeys("hgy7ttrdf");
+		driver.findElement(LoginPage.passWord).sendKeys("hgy7ttrdf");
 	}
 
 	@When("Click login invalid")
 	public void click_login_invalid() {
-		driver.findElement(By.xpath("//*[@type='submit']")).click();
+		driver.findElement(LoginPage.logIn).click();
 	}
 
 	@Then("alert msg shows Invalid username or password")
@@ -72,17 +74,17 @@ public class StepDef {
 
 	@When("Enter null user")
 	public void enter_null_user() {
-		driver.findElement(By.xpath("//*[@id='username']")).sendKeys("");
+		driver.findElement(LoginPage.userName).sendKeys("");
 	}
 
 	@When("Enter null password")
 	public void enter_null_password() {
-		driver.findElement(By.xpath("//*[@id='password']")).sendKeys("");
+		driver.findElement(LoginPage.passWord).sendKeys("");
 	}
 
 	@When("Click login null")
 	public void click_login_null() {
-		driver.findElement(By.xpath("//*[@type='submit']")).click();
+		driver.findElement(LoginPage.logIn).click();
 	}
 
 	@Then("alert msg shows Invalid username or password null")
