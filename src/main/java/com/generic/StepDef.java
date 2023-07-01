@@ -21,7 +21,7 @@ public class StepDef {
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(
-				"file:///C:/Users/IT/AppData/Local/Microsoft/Windows/INetCache/IE/1EZWZC3M/dev_online%20Banking%20monthly_yearly%20statement[1].html");
+				"file:///C:/Users/IT/Desktop/dev_online%20Banking%20monthly_yearly%20statement.html");
 
 	}
 
