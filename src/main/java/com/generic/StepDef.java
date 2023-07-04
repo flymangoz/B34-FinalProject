@@ -11,6 +11,7 @@ import com.page.object.model.LoginPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class StepDef {
 
@@ -18,6 +19,7 @@ public class StepDef {
 
 	@Given("Open the browser and go to the application")
 	public void open_the_browser_and_go_to_the_application() {
+		WebDriverManager.chromedriver().setup();
 		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get(
